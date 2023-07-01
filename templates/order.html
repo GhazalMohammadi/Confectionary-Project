@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}" />
+{% endblock linkTags %} {% block titleContent %}Order{% endblock titleContent %}
+<span></span>
+{% block Content %}
+<div id="wrapperTotalOfProduct">
+  <div id="wrapperItem">
+    <div id="wrapperRightSide">
+      <h2>{{product.product.title}}</h2>
+      <div class="wrapperOfRows">
+        <p>قیمت هر کیلو : {{product.product.price}} تومان</p>
+      </div>
+
+      <div class="wrapperOfRows">
+        <a id="shoppingBtn" href="{{product.get_add_to_cart_url}}">
+          افزودن به سبد
+        </a>
+
+        <a id="deleteBtn" href="{{product.get_remove_from_cart_url}}">
+          حذف از سبد
+        </a>
+      </div>
+    </div>
+
+    <img
+      id="wrapperLeftSide"
+      src="{% static 'Image/ترکیب اجیل.jpg' %}"
+      class="picOfProduct"
+    />
+  </div>
+</div>
+{% endblock Content %}{% block myScript %}
+
+<!-- <script src="{% static 'js/order.js' %}"></script> -->
+{% endblock myScript %}

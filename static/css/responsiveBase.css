@@ -1,0 +1,52 @@
+@media screen and (max-width: 1070px) {
+  #wrapperTotalMenu {
+    display: none;
+  }
+  #menuIconBtn {
+    display: block;
+    margin: 0 1rem 0 0;
+  }
+  #wrapperOfHeader {
+    justify-content: space-between;
+  }
+  #wrapperOfLeftSideHeader {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  #wrapperTotalFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 30rem;
+  }
+  #wrapperTotalText {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  #wrapperOfLeftSideHeader {
+    width: 60%;
+  }
+  .styleOfFooterPics {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #dropdownCity {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  #signInBtn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+  }
+  #wrapperOfLeftSideHeader {
+    width: 70%;
+  }
+}

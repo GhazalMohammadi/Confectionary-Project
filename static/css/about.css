@@ -1,0 +1,41 @@
+:root {
+  --bg-Color: #1f1106;
+  --txt-Color: #f5f1ed;
+  --Success-Btn: #70a37f;
+  --Warning-Btn: #e84855;
+  --bg-Second: #92828d;
+}
+
+#wrapperTotalAboutPart {
+  width: 100%;
+  margin: 13vh 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#aboutPart {
+  width: 90%;
+  height: 40rem;
+  border-top: 2px solid var(--txt-Color);
+  border-right: 2px solid var(--txt-Color);
+  border-left: 2px solid var(--txt-Color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#picOfBannerAbout {
+  width: 50%;
+  height: 90%;
+}
+
+#wrapperTextOfAbout {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--txt-Color);
+  text-align: justify;
+}

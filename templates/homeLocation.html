@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock linkTags %} {% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block Content %}
+<div id="wrapperOfMainBanner">
+  <img src="{% static 'Image/BigBanner.svg' %}" id="bigBanner" />
+</div>
+
+<div id="wrapperOfTotalProducts">
+  <h2 id="titleOfProducts">محصولات ما</h2>
+  <ul id="wrapperOfCategoryItems">
+    <!-----------------------------Django Code ------------------------------->
+    <a href="/"> <li>همه</li> </a>
+    {% for category in categories %}
+    <a href="/Category/{{category.id}}"> <li>{{category.name}}</li> </a>
+    {% endfor %}
+
+    <!------------------------------Django Code  End-------------------------->
+  </ul>
+
+  <div id="wrapperOfProducts">
+    <!------------------------------Django Code------------------------------->
+    <!--Item-->
+    {% for product in products%}
+    <div class="wrapperEachItem">
+      <img
+        src="{% static 'Image/ترکیب اجیل.jpg' %}"
+        class="styleOfPicProduct"
+      />
+      <div class="wrapperOfInfoOfProduct">
+        <p>{{product.product.title}}</p>
+        <p>قیمت هر کیلو :{{product.product.price}} تومان</p>
+        <p>{{product.warehouse.city}}</p>
+        <a class="viewProductBtn" href="/{{product.id}}/Product/"
+          >مشاهده محصول</a
+        >
+      </div>
+    </div>
+    {% endfor %}
+
+    <!------------------------------Django Code  End--------------------------->
+  </div>
+</div>
+{% endblock Content %}

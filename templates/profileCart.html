@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/profileCart.css' %}" />
+{% endblock linkTags %}
+<span></span>
+{% block titleContent %}Profile{% endblock titleContent%}
+<span></span>
+{% block Content %}
+<div id="wrapperOfGreeting">
+  <div id="subWrapper">
+    <h3>{{user.username}} خوش آمدید</h3>
+    <a href="{% url 'logout' %}">خروج از سامانه</a>
+  </div>
+</div>
+<div id="wrapperOfMainPart">
+  <div id="wrapperOfRightSide">
+    <ul>
+      <a href="/{{user.username}}/">
+        <li>سبد خرید</li>
+      </a>
+      <a href="/{{user.pk}}/Profile/">
+        <li>اطلاعات شخصی</li>
+      </a>
+      <a href="/{{user.username}}/ProfileHistory/" style="border: none">
+        <li>سفارشهای انجام شده</li>
+      </a>
+    </ul>
+  </div>
+  <div id="wrapperOfLeftSide">
+    <!-- item -->
+    {% for order in orders %}
+    <div class="wrapperOfEachItems">
+      <div class="wrapperOfInfo">
+        <h3>{{order.product.product.title}}</h3>
+        <p>تعداد : {{order.quantity}}</p>
+        <p>قیمت هر کیلو : {{order.product.product.price}}</p>
+        <p id="totalprice"></p>
+      </div>
+      <!-- <img src="{{order.product.product.image.url}}" class="picOfItems" /> -->
+      <img src="{% static 'Image/ترکیب اجیل.jpg' %}" class="picOfItems" />
+    </div>
+    {% endfor%}
+
+    <div id="wrapperOfBtn">
+      <button type="" id="shopBtn">ادامه خرید</button>
+    </div>
+  </div>
+</div>
+
+{% endblock Content %}

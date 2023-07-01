@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+{% endblock linkTags %}
+<span></span>
+{% block titleContent %}Contact{% endblock titleContent%}
+<span></span>
+{% block Content %}
+<div id="wrapperTotalAboutPart">
+  <div id="aboutPart">
+    <div id="wrapperTextOfAbout">
+      <h2>تماس با ما</h2>
+      <p>پشتیبانی : 44024 - 021</p>
+      <p>شرکت : 44024 - 021</p>
+    </div>
+    <img src="{% static 'Image/contactBanner.jpg' %}" id="picOfBannerAbout" />
+  </div>
+</div>
+{% endblock Content %}

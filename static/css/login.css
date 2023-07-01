@@ -1,0 +1,78 @@
+:root {
+  --bg-Color: #1f1106;
+  --txt-Color: #f5f1ed;
+  --Success-Btn: #70a37f;
+  --Warning-Btn: #e84855;
+  --bg-Second: #92828d;
+}
+
+#wrapperTotalForm {
+  width: 100%;
+  height: 45rem;
+  margin: 10vh 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../Image/BannerFinal.svg);
+  background-size: 100% 45rem;
+  background-repeat: no-repeat;
+}
+
+#wrapperForm {
+  width: 40%;
+  height: 40rem;
+  border: 2px solid var(--txt-Color);
+  border-radius: 1.5rem;
+  color: var(--txt-Color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inputsWrapper {
+  width: 60%;
+}
+
+.inputStyle {
+  width: 100%;
+  height: 3rem;
+  background: transparent;
+  border: 2px solid var(--txt-Color);
+  border-radius: 10rem;
+  padding: 0 1rem 0 0;
+  margin: 1rem 0 0 0;
+  color: var(--txt-Color);
+  box-shadow: 0 0.5px 10px #110903;
+}
+.inputStyle::placeholder {
+  color: var(--txt-Color);
+}
+
+#btnWrapper {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.btnStyle {
+  width: 45%;
+  border: 1.5px solid var(--Success-Btn);
+  font-family: "IranSans";
+  cursor: pointer;
+  border-radius: 10rem;
+  height: 3rem;
+  box-shadow: 0 0.5px 10px #110903;
+  font-weight: bold;
+}
+
+#loginBtn {
+  background-color: var(--Success-Btn);
+  color: var(--bg-Color);
+  transition: 0.3s;
+}
+
+#signupBtn {
+  background-color: transparent;
+  color: var(--Success-Btn);
+  transition: 0.3s;
+}

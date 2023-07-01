@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/profileManagerInventory.css' %}" />
+
+{% endblock linkTags %}
+<span></span>
+{% block titleContent %}Profile Manager{% endblock titleContent %}
+<span></span>
+{% block Content %}
+<div id="wrapperOfGreeting">
+  <div id="subWrapper">
+    <h3>{{user.username}} خوش آمدید</h3>
+    <a href="{% url 'logout' %}">خروج از سامانه</a>
+  </div>
+</div>
+<div id="wrapperOfMainPart">
+  <div id="wrapperOfRightSide">
+    <ul>
+      <a href="/{{user.pk}}/ProfileManager/">
+        <li>اطلاعات شخصی</li>
+      </a>
+      <a href="/{{user.username}}/ProfileManagerHistory/" style="border: none">
+        <li>سفارش های مشتریان</li>
+      </a>
+    </ul>
+  </div>
+  <div id="wrapperOfLeftSide">
+    <table id="wrapperTotalTable">
+      <tr>
+        <th>شماره فاکتور</th>
+        <th>مشتری</th>
+        <th>مشاهده</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{order.id}}</td>
+        <td>{{order.user.username}}</td>
+        <td><a href="">مشاهده بیشتر</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock Content %}

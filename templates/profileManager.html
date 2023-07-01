@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/profileManager.css' %}" />
+{% endblock linkTags %}
+<span></span>
+{% block titleContent %}Profile{% endblock titleContent%}
+<span></span>
+{% block Content %}
+<div id="wrapperOfGreeting">
+  <div id="subWrapper">
+    <h3>{{user.username}} خوش آمدید</h3>
+    <a href="{% url 'logout' %}">خروج از سامانه</a>
+  </div>
+</div>
+<div id="wrapperOfMainPart">
+  <div id="wrapperOfRightSide">
+    <ul>
+      <a href="/{{user.pk}}/ProfileManager/">
+        <li>اطلاعات شخصی</li>
+      </a>
+      <a href="/{{user.username}}/ProfileManagerHistory/" style="border: none">
+        <li>سفارش های مشتریان</li>
+      </a>
+    </ul>
+  </div>
+  <div id="wrapperOfLeftSide">
+    <form action="" method="post" id="wrapperTotalForm">
+      {% csrf_token %}
+      <div class="wrapperOfRows">
+        <label>نام کاربری</label>
+        {{form.username}}
+        <label>ایمیل</label>
+        {{form.email}}
+      </div>
+      <div class="wrapperOfRows">
+        <label>نام </label>
+        {{form.first_name}}
+        <label>نام خانوادگی</label>
+        {{form.last_name}}
+      </div>
+      <div class="wrapperOfRows">
+        <button type="submit" id="changeBtn">ثبت</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock Content %} {% block myScript %}
+<script src="{% static 'js/profileManager.js' %}"></script>
+{% endblock myScript %}

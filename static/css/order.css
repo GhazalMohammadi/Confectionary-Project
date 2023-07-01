@@ -1,0 +1,105 @@
+:root {
+  --bg-Color: #1f1106;
+  --txt-Color: #f5f1ed;
+  --Success-Btn: #70a37f;
+  --Warning-Btn: #e84855;
+  --bg-Second: #92828d;
+}
+
+#wrapperTotalOfProduct {
+  width: 100%;
+  height: 40rem;
+  margin: 10vh 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wrapperItem {
+  width: 90%;
+  height: 30rem;
+  border: 2px solid var(--txt-Color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#wrapperRightSide {
+  width: 80%;
+  height: 100%;
+  color: var(--txt-Color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapperOfRows {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inputStyles {
+  width: 40%;
+  background-color: transparent;
+  border: 1.5px solid var(--txt-Color);
+  border-radius: 10rem;
+  color: var(--txt-Color);
+  height: 3rem;
+  cursor: pointer;
+  padding: 0 1rem 0 0;
+}
+.inputStyles option {
+  color: var(--bg-Color);
+}
+
+#shoppingBtn {
+  width: 30%;
+  background-color: var(--Success-Btn);
+  border: 1.5px solid var(--Success-Btn);
+  border-radius: 10rem;
+  color: var(--txt-Color);
+  height: 3rem;
+  cursor: pointer;
+  font-family: "IranSans";
+  transition: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 1rem;
+}
+#shoppingBtn:hover {
+  background-color: transparent;
+  color: var(--Success-Btn);
+  transition: 0.3s;
+}
+
+#deleteBtn {
+  width: 30%;
+  background-color: var(--Warning-Btn);
+  border: 1.5px solid var(--Warning-Btn);
+  border-radius: 10rem;
+  color: var(--txt-Color);
+  height: 3rem;
+  cursor: pointer;
+  font-family: "IranSans";
+  transition: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem 0 0;
+}
+#deleteBtn:hover {
+  background-color: transparent;
+  color: var(--Warning-Btn);
+  transition: 0.3s;
+}
+.picOfProduct {
+  width: 40%;
+  height: 100%;
+  border-radius: 1rem 50% 50% 1rem;
+}

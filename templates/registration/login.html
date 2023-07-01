@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'css/responsiveLogin.css' %}" />
+{% endblock linkTags %} {% block titleContent %}Login{% endblock titleContent %}
+<span></span>
+{% block Content %}
+<div id="wrapperTotalForm">
+  <form action="" method="post" id="wrapperForm">
+    {% csrf_token %}
+    <h2>ورود به سامانه</h2>
+    <div class="inputsWrapper">
+      <label for="id_username">نام کاربری</label>
+      {{form.username}}
+    </div>
+    <div class="inputsWrapper">
+      <label for="id_password">رمز عبور</label>
+      {{form.password}}
+    </div>
+    <div id="btnWrapper">
+      <button type="submit" class="btnStyle" id="loginBtn">ورود</button>
+      <button
+        class="btnStyle"
+        id="signupBtn"
+        onclick="location.href='/accounts/signup/'"
+      >
+        ثبت نام
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock Content %} {% block myScript %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock myScript %}

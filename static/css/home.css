@@ -1,0 +1,106 @@
+:root {
+  --bg-Color: #1f1106;
+  --txt-Color: #f5f1ed;
+  --Success-Btn: #70a37f;
+  --Warning-Btn: #e84855;
+  --bg-Second: #92828d;
+}
+
+#wrapperOfMainBanner {
+  width: 100%;
+  height: 98.5vh;
+  background: url(../Image/BannerFinal.svg);
+  background-position: center;
+  background-size: 100% 98.5vh;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bigBanner {
+  width: 80%;
+}
+#wrapperOfTotalProducts {
+  width: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0 0 0;
+}
+
+#titleOfProducts {
+  /* width: 20%; */
+  text-align: center;
+  color: var(--txt-Color);
+  font-weight: bold;
+  padding: 2rem 2rem;
+}
+#wrapperOfCategoryItems {
+  width: 70%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+#wrapperOfCategoryItems a {
+  text-decoration: none;
+  color: var(--txt-Color);
+  border: 1px solid var(--txt-Color);
+  border-radius: 5rem;
+  padding: 0.4rem 2rem;
+  transition: 0.3s;
+}
+#wrapperOfCategoryItems a:hover {
+  background-color: var(--txt-Color);
+  color: var(--bg-Color);
+  transition: 0.3s;
+}
+
+#wrapperOfProducts {
+  width: 90%;
+  border-left: 2px solid var(--txt-Color);
+  border-right: 2px solid var(--txt-Color);
+  border-top: 2px solid var(--txt-Color);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 0 0;
+}
+
+.wrapperEachItem {
+  width: 27%;
+  height: 50vh;
+  border: 2px solid var(--txt-Color);
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem 0 0;
+}
+.styleOfPicProduct {
+  width: 100%;
+  height: 60%;
+  border-radius: 0 0 50% 50%;
+}
+.wrapperOfInfoOfProduct {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--txt-Color);
+}
+.viewProductBtn {
+  background-color: var(--Success-Btn);
+  color: var(--bg-Color);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border-radius: 10rem;
+  border: 1.5px solid var(--Success-Btn);
+  transition: 0.3s;
+}
+.viewProductBtn:hover {
+  background-color: transparent;
+  color: var(--Success-Btn);
+  transition: 0.3s;
+}

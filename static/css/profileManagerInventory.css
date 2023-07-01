@@ -1,0 +1,98 @@
+:root {
+  --bg-Color: #1f1106;
+  --txt-Color: #f5f1ed;
+  --Success-Btn: #70a37f;
+  --Warning-Btn: #e84855;
+  --bg-Second: #92828d;
+}
+
+#wrapperOfGreeting {
+  width: 100%;
+  margin: 12vh 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+#subWrapper {
+  color: var(--txt-Color);
+  width: 80%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--txt-Color);
+  padding: 0 1rem;
+}
+#subWrapper a {
+  text-decoration: none;
+  background-color: transparent;
+  border: 1.5px solid var(--Warning-Btn);
+  color: var(--Warning-Btn);
+  padding: 0.75rem 2.5rem;
+  border-radius: 5rem;
+  transition: 0.3s;
+}
+#subWrapper a:hover {
+  background-color: var(--Warning-Btn);
+  color: var(--txt-Color);
+  transition: 0.3s;
+}
+
+#wrapperOfMainPart {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0 0;
+}
+#wrapperOfRightSide {
+  width: 20%;
+  height: 40rem;
+  border-left: 2px solid var(--txt-Color);
+}
+#wrapperOfRightSide ul {
+  list-style-type: none;
+  height: 100%;
+}
+#wrapperOfRightSide ul a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 50%;
+  color: var(--txt-Color);
+  border-bottom: 2px solid var(--txt-Color);
+}
+#wrapperOfRightSide ul a:hover {
+  font-weight: bold;
+}
+
+#wrapperOfLeftSide {
+  width: 60%;
+  height: 40rem;
+  border-bottom: 2px solid var(--txt-Color);
+  border-top: 2px solid var(--txt-Color);
+  border-left: 2px solid var(--txt-Color);
+  overflow-y: scroll;
+}
+#wrapperTotalTable {
+  width: 90%;
+  margin: 5% 5% 0 0;
+  text-align: center;
+  color: var(--txt-Color);
+}
+#wrapperTotalTable tr th {
+  border-bottom: 1px solid var(--txt-Color);
+}
+#wrapperTotalTable tr td {
+  border-bottom: 1px solid var(--txt-Color);
+}
+#wrapperTotalTable tr td a {
+  color: var(--Success-Btn);
+  text-decoration: none;
+}
+#wrapperTotalTable tr td a:hover {
+  font-weight: bold;
+}

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsiveBase.css' %}" />
+    {% block linkTags %}{% endblock linkTags %}
+    <title id="titleOfPage">
+      {% block titleContent %}{% endblock titleContent %}
+    </title>
+  </head>
+
+  <body onresize="changingScreenDisplay()">
+    <header id="wrapperOfHeader">
+      <img
+        src="{% static 'Image/MenuIcon.svg' %}"
+        id="menuIconBtn"
+        onclick="clickingMenu()"
+      />
+      <ul id="wrapperTotalMenu">
+        <a href="{% url 'home' %}">
+          <li>خانه</li>
+        </a>
+        <a href="{% url 'contact' %}">
+          <li>تماس با ما</li>
+        </a>
+        <a href="{% url 'about' %}">
+          <li>درباره ما</li>
+        </a>
+      </ul>
+
+      <div id="wrapperOfLeftSideHeader">
+        <select id="dropdownCity">
+          {% for city in cities %}
+          <option onclick="location.href='/{{city.id}}'">{{city.name}}</option>
+          {% endfor %}
+        </select>
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="/{{user.id}}/ProfileManager/" id="signInBtn"> حساب کاربری </a>
+        <span></span>
+        {% elif user.is_authenticated %}
+        <a href="/{{user.username}}/" id="signInBtn"> حساب کاربری </a>
+        {% else %}
+        <a href="{% url 'login' %}" id="signInBtn">ورود و ثبت نام</a>
+        {% endif %}
+        <!-- <img /> -->
+      </div>
+    </header>
+    <div id="wrapperTotalSecondMenu">
+      <ul id="WrapperSecondMenu">
+        <a href="">
+          <li>خانه</li>
+        </a>
+        <a href="">
+          <li>تماس با ما</li>
+        </a>
+        <a href="">
+          <li>درباره ما</li>
+        </a>
+      </ul>
+    </div>
+    {% if messages %} {% for message in messages %}
+    <div class="{{ message.tags }}  alert">{{ message }}</div>
+    {% endfor %} {% endif %} {% block Content %}{% endblock Content %}
+    <footer id="wrapperTotalFooter">
+      <div id="wrapperTotalText">
+        <h3>مختصر صحبتی با شما</h3>
+        <p id="footerText">
+          در وب سایت ما مرغوب ترین اجناس و آجیل را بصورت عمده در سریعترین زمان
+          تهیه کنید . این شرکت در سراسر ایران شعبه دارد و امکان ارسال به سراسر
+          ایران امکان پذیر است
+        </p>
+      </div>
+
+      <div id="wrapperOfPics">
+        <img
+          src="{% static 'Image/عضو اتحادیه کشوری.png' %}"
+          alt=""
+          class="styleOfFooterPics"
+        />
+        <img
+          src="{% static 'Image/نشان ملی ثبت.png' %}"
+          alt=""
+          class="styleOfFooterPics"
+        />
+        <img
+          src="{% static 'Image/نماد اعتماد.png' %}"
+          alt=""
+          class="styleOfFooterPics"
+        />
+      </div>
+    </footer>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block myScript %} {% endblock myScript %}
+  </body>
+</html>

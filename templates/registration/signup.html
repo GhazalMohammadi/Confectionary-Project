@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static%}
+<span></span>
+{% block linkTags %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+{% endblock linkTags %}
+<span></span>
+{% block titleContent %}SignUp{% endblock titleContent %}
+<span></span>
+{% block Content %}
+<div id="wrapperTotalForm">
+  <form action="" method="post" id="wrapperForm">
+    {% csrf_token %}
+    <h2>ثبت نام در سامانه</h2>
+    <div class="inputsWrapper">
+      <label for="id_username">نام کاربری</label>
+      {{form.username}}
+    </div>
+
+    <div class="inputsWrapper">
+      <label for="id_password1">رمز عبور</label>
+      {{form.password1}}
+    </div>
+    <div class="inputsWrapper">
+      <label for="id_password2">تکرار رمز </label>
+      {{form.password2}}
+    </div>
+    <div id="btnWrapper">
+      <button type="submit" class="btnStyle" id="loginBtn">ثبت نام</button>
+      <button
+        class="btnStyle"
+        id="signupBtn"
+        onclick="location.href='/accounts/login'"
+      >
+        ورود
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock Content %} {% block myScript %}
+<script src="{% static 'js/signup.js' %}"></script>
+{% endblock myScript %}
